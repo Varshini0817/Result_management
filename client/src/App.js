@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import Spinner from './components/Spinner';
 import { Toaster } from 'react-hot-toast';
 import StaffMemHome from './pages/staff/StaffMemHome';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const { loading } = useSelector((state) => state.alert);
@@ -21,7 +22,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path = "/login" element={<Login/>}/>
           <Route path='/register' element={ <Register/>} />
-          <Route path='/staffMem' element={ <StaffMemHome/>}/>
+          <Route path='/staffMem' element={ <ProtectedRoute><StaffMemHome/></ProtectedRoute>}/>
         </Routes>
       </BrowserRouter>
       

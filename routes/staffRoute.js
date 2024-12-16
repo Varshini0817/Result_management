@@ -3,6 +3,7 @@ const router = express.Router();
 const Staff = require('../models/staffModel');
 const brcypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const authmiddleware = require('../middlewares/authmiddleware');
 
 //register a new staff member
 router.post("/register", async(req, res)=>{
@@ -82,4 +83,28 @@ router.post("/login", async(req,res)=>{
 
     }
 })
+
+//get staff mem by id
+router.post("/get-staffmem-by-id",authmiddleware, async(req,res)=>{
+    try {
+        const member = await Staff.findOne({
+            _id : req.body.staffId
+        });
+        if(!member){
+            return res.status(200).send({
+                message: "Staff member not found",
+                success: false
+            })
+        }
+        member.password = undefined;
+        res.status(200).send({
+            message:"Staff member found",
+            success: true,
+            data: member
+        })
+    } catch (error) {
+        
+    }
+}
+)
 module.exports = router;

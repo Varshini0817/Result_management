@@ -17,8 +17,8 @@
 }
 
 /* text-colors */
-.primary-text{
-    color: var(--primary);
+.primary-text {
+   color: #5e00f6;
 }
 .secondary-text{
     color: var(--secondary);
