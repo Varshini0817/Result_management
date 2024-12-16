@@ -1,0 +1,100 @@
+:root{
+    --primary :  linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    --secondary : #dfff61;
+}
+
+/* background colors */
+.primary{
+    background: var(--primary);
+    height: 100vh;
+}
+
+.secondary{
+    background-color: var(--secondary);
+}
+.white{
+    background-color: white;
+}
+
+/* text-colors */
+.primary-text{
+    color: var(--primary);
+}
+.secondary-text{
+    color: var(--secondary);
+}
+
+/* border colors */
+.primary-border{
+    color: var(--primary);
+}
+.secondary-border{
+    color: var(--secondary);
+}
+
+/* text-sizes */
+.text-small{
+    font-size: 16px;
+}
+.text-medium{
+    font-size: 24px;
+}
+.text-large{
+    font-size: 36px;
+}
+
+/* text-colors */
+.text-white{
+    color: white;
+}
+.text-black{
+    color: black;
+}
+
+/* heights and widths */
+.h-screen{
+    height: 100vh;
+}
+.w-screen{
+    width: 100vw;
+}
+.w-400{
+    width: 400px;
+}
+
+/* cards */
+.card-md{
+    box-shadow: 0 0 1px rgba(0,0,0, 0.1);
+}
+.card-sm{
+    box-shadow: 0 0 1px rgba(0,0,0, 0.1);
+}
+
+/* html elements */
+input {
+    border: 2px solid transparent; /* Transparent border as a base */
+    background: var(--primary); /* Apply the gradient */
+    background-clip: border-box; /* Ensure gradient appears only at the border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    padding: 8px;
+    color: #000; /* Ensure text color is visible */
+}
+
+input:focus {
+    border: 2px solid transparent; /* Transparent border */
+    background-clip: border-box; /* Clip the gradient to the border */
+    outline: none; /* Remove focus outline */
+}
+button{
+    border-radius: 0;
+    height: 40px !important;
+    border: none !important;
+}
+a{
+    color: rgb(68, 97, 240) !important;
+    text-decoration: none;
+}
+/* antd override */
+.ant-form-item{
+    margin-bottom: 5px !important;
+}
