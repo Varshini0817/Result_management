@@ -13,6 +13,9 @@ import Students from './pages/staff/Students';
 import AddStudent from './pages/staff/AddStudent';
 import EditStudent from './pages/staff/EditStudent';
 import PublicRoute from './components/PublicRoute';
+import Results from './pages/staff/Results';
+import AddResults from './pages/staff/AddResults';
+import EditResults from './pages/staff/EditResult';
 
 function App() {
   const { loading } = useSelector((state) => state.alert);
@@ -30,6 +33,7 @@ function App() {
             <ProtectedRoute>
               <StaffMemHome/>
             </ProtectedRoute>}/>
+          {/* students */}
           <Route path='/staffMem/students' element={
             <ProtectedRoute>
               <Students/>
@@ -40,12 +44,28 @@ function App() {
               <AddStudent/>
             </ProtectedRoute>
           }/>
-
           <Route path='/staffMem/students/edit/:rollNum' element={
             <ProtectedRoute>
               <EditStudent/>
             </ProtectedRoute>
           }/>
+          {/* results */}
+          <Route path='/staffMem/results' element={
+            <ProtectedRoute>
+              <Results/>
+            </ProtectedRoute>
+          }/>
+          <Route path="/staffMem/results/add-results" element={
+            <ProtectedRoute>
+              <AddResults/>
+            </ProtectedRoute>
+          }/>
+          <Route path='/staffMem/results/edit/:resultId' element={
+            <ProtectedRoute>
+              <EditResults/>
+            </ProtectedRoute>
+          }
+          />
         </Routes>
       </BrowserRouter>
       

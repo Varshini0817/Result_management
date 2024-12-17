@@ -4,12 +4,15 @@ require('dotenv').config()
 
 const dbConfig = require("./config/dbConfig");
 app.use(express.json());
-
+//routes
 const staffRoute = require("./routes/staffRoute")
 const studentRoute = require("./routes/studentRoute");
+const resultRoute = require("./routes/resultRoute");
 
 app.use('/api/staff',staffRoute);
 app.use('/api/student', studentRoute);
+app.use("/api/results",resultRoute);
+
 const port = process.env.PORT || 5000;
 app.listen(port, ()=>
 {
