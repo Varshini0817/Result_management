@@ -1,6 +1,6 @@
 :root{
-    --primary :  linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    --secondary : #dfff61;
+    --primary :  rgba(79, 246, 241, 0.663);
+    --secondary : #e89c31;
 }
 
 /* background colors */
@@ -18,7 +18,7 @@
 
 /* text-colors */
 .primary-text {
-   color: #5e00f6;
+   color: rgb(239, 29, 221);
 }
 .secondary-text{
     color: var(--secondary);
@@ -29,7 +29,7 @@
     color: var(--primary);
 }
 .secondary-border{
-    color: var(--secondary);
+    border: 2px solid var(--secondary);
 }
 
 /* text-sizes */
@@ -61,6 +61,9 @@
 .w-400{
     width: 400px;
 }
+.w-300{
+    width: 300px;
+}
 
 /* cards */
 .card-md{
@@ -72,17 +75,16 @@
 
 /* html elements */
 input {
-    border: 2px solid transparent; /* Transparent border as a base */
-    background: var(--primary); /* Apply the gradient */
-    background-clip: border-box; /* Ensure gradient appears only at the border */
-    border-radius: 4px; /* Optional: Add rounded corners */
+    border: 2px solid black; /* Transparent border as a base */
     padding: 8px;
     color: #000; /* Ensure text color is visible */
+    width: 100%;
+    padding-left: 20px;
 }
 
 input:focus {
-    border: 2px solid transparent; /* Transparent border */
-    background-clip: border-box; /* Clip the gradient to the border */
+    background: var(--primary);
+    border: 2px solid rgb(248, 148, 148); /* Transparent border */
     outline: none; /* Remove focus outline */
 }
 button{
@@ -94,7 +96,29 @@ a{
     color: rgb(68, 97, 240) !important;
     text-decoration: none;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
+i{
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--secondary);
+}
 /* antd override */
 .ant-form-item{
     margin-bottom: 5px !important;
+}
+.custom-input {
+    border: 2px solid black !important; /* Transparent border as a base */
+    border-radius: 0% !important;
+    padding: 8px;
+    color: #000; /* Ensure text color is visible */
+    width: 100%;
+    padding-left: 20px;
+}
+
+.custom-:focus {
+    background: var(--primary);
+    border: 2px solid rgb(248, 148, 148); /* Transparent border */
+    outline: none; /* Remove focus outline */
 }

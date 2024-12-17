@@ -7,7 +7,7 @@ module.exports = (req, res, next)=>{
     }
     try{
         const decoded = jwt.verify(token, process.env.jwt_token);
-        console.log(`Decoded ${decoded} d.id ${decoded.staffId}`)
+        //console.log(`Decoded ${decoded} d.id ${decoded.staffId}`)
         req.body.staffId = decoded.staffId;
         next();
     }

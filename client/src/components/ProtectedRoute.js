@@ -5,9 +5,11 @@ import { useDispatch } from 'react-redux';
 import { ShowLoading, HideLoading } from '../redux/alerts';
 import { setStaffMem } from '../redux/staffMem';
 import DefaultLayout from './DefaultLayout';
+import { useNavigate } from 'react-router-dom';
 
 function ProtectedRoute(props){
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [ readyToRender, setReadyToRender] = React.useState(false);
     const getStaffMemData = async () => {
         try{
@@ -30,7 +32,7 @@ function ProtectedRoute(props){
             }
         }catch(error) {
             dispatch(HideLoading());
-            toast.error("Something went wrong!")
+            navigate("/login");
         }
     };
 

@@ -74,7 +74,7 @@ router.post("/login", async(req,res)=>{
         {expiresIn : "24h"}
     )
     res.status(200).send({
-        message: "Login successful!",
+        message: "Login successful !",
         success: true,
         data : token
     })

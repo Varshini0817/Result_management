@@ -1,6 +1,6 @@
 import React from "react";
 import {Form, Input} from 'antd';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { HideLoading, ShowLoading } from '../../redux/alerts';
 import toast from 'react-hot-toast';
@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 function Login(){
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const onFinish = async (values)=> {
         try{
             dispatch(ShowLoading());
@@ -16,6 +17,7 @@ function Login(){
             if(response.data.success){
                 toast.success(response.data.message);
                 localStorage.setItem("token", response.data.data);
+                navigate("/staffMem");
             }
             else{
                 toast.error(response.data.message);
