@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { HideLoading, ShowLoading } from "../../redux/alerts";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Table } from "antd";
 import PageTitle from "../../components/PageTitle";
 
 function Results(){
@@ -11,29 +12,29 @@ function Results(){
     const [ results, setResults] = useState([]);
     const dispatch = useDispatch();
     const getResults = async(values)=>{
-        // try {
-        //     dispatch(ShowLoading());
-        //     const response = await axios.post("/api/results/get-all-results", {},{
-        //         headers: {
-        //             Authorization: `Bearer ${localStorage.getItem("token")}`
-        //         },
-        //     })
-        //     dispatch(HideLoading());
-        //     if(response.data.success){
-        //         setResults(response.data.data);
-        //     }
-        //     else{
-        //         toast.error(response.data.messag);
-        //     }
-        // } catch (error) {
-        //     dispatch(HideLoading());
-        //     toast.error(error.message);
-        // }
+        try {
+            dispatch(ShowLoading());
+            const response = await axios.post("/api/student/get-all-results", {},{
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                },
+            })
+            dispatch(HideLoading());
+            if(response.data.success){
+                setResults(response.data.data);
+            }
+            else{
+                toast.error(response.data.messag);
+            }
+        } catch (error) {
+            dispatch(HideLoading());
+            toast.error(error.message);
+        }
     }
 
-    // useEffect(()=>{
-    //     getResults();
-    // },[]);
+    useEffect(()=>{
+        getResults();
+    },[]);
 
     const columns = [
         {
@@ -88,6 +89,8 @@ function Results(){
                     navigate('/staffMem/results/add-results')
                 }}>Add Results</button>
             </div>
+            <Table columns={columns}/>
+
         </div>
     )
 }

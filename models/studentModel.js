@@ -24,6 +24,10 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    results:{
+        type: Array,
+        required: true
+    }
 })
 
 module.exports = mongoose.model('students', studentSchema);
