@@ -37,7 +37,13 @@ router.post("/add-student", authMiddleware, async(req,res)=>{
 //get all students
 router.post("/get-all-students", authMiddleware, async(req,res)=>{
     try {
-        const students = await Student.find({});
+        //console.log(req.body, "request body"); // Verify class is being sent
+        const query = {};
+        if (req.body.class) {
+            query.class = req.body.class; // Only filter by class if it's provided
+        }
+        const students = await Student.find(query);
+        //console.log(req.body," result");
         return res.status(200).send({
             message: "Students fetched successfully",
             success: true,
@@ -117,4 +123,41 @@ router.post("/delete-student/:rollNum", authMiddleware, async(req,res)=>{
     }
 })
 
+//search student by filter
+router.post('/search-students', authMiddleware, async(req,res)=>{
+    try {
+        const { filter, searchTerm } = req.body;
+
+        let query = {};
+        if(filter && searchTerm){
+            if (filter === "rollNum" || filter === "class") {
+                // Exact match for rollNum and class
+                query[filter] = searchTerm;
+            } else {
+                // Using regex for other fields
+                query[filter] = { $regex: searchTerm, $options: "i" }; // i- Case-insensitive regex
+            }
+
+            const students = await Student.find(query);
+
+            if(students.length == 0){
+                return res.status(200).send({
+                    message : "No students found !",
+                    success : false,
+                    data: []
+                })
+            }
+            return res.status(200).send({
+                message : "Students found !",
+                data : students,
+                success : true
+            })
+        }
+    } catch (error) {
+        res.status(500).send({
+            message : error.message,
+            success: false
+        })
+    }
+})
 module.exports = router;

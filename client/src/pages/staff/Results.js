@@ -14,7 +14,7 @@ function Results(){
     const getResults = async(values)=>{
         try {
             dispatch(ShowLoading());
-            const response = await axios.post("/api/student/get-all-results", {},{
+            const response = await axios.post("/api/result/get-all-results", {},{
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 },
@@ -38,41 +38,28 @@ function Results(){
 
     const columns = [
         {
+            title: 'Date',
+            dataIndex: 'date', //match with schema
+            key: 'date'
+        },
+        {
+            title: 'Examination',
+            dataIndex: 'examination', //match with schema
+            key: 'examination'
+        },
+        {
             title: 'Class',
             dataIndex: 'class', //match with schema
             key: 'class'
-        },
-        {
-            title: 'Roll No.',
-            dataIndex: 'rollNum', //match with schema
-            key: 'rollNum'
-        },
-        {
-            title: 'First name',
-            dataIndex: 'firstName', //match with schema
-            key: 'firstName'
-        },
-        {
-            title: 'Last name',
-            dataIndex: 'lastName', //match with schema
-            key: 'lastName'
-        },
-        {
-            title: 'Phone',
-            dataIndex: 'phone', //match with schema
-            key: 'phone'
-        },
-        {
-            title: 'Email',
-            dataIndex: 'email', //match with schema
-            key: 'email'
         },
         {
             title: "Action",
             key: 'action',
             render : (text, record)=>(
                 <div className="d-flex gap-4">
-                    <i className="ri-edit-box-fill" ></i>
+                    <i className="ri-edit-box-fill" onClick={()=>{
+                        navigate(`/staffMem/results/edit/${record._id}`)
+                    }}></i>
                     <i className="ri-delete-bin-fill" onClick={()=>{
                         
                     }}></i>
@@ -89,7 +76,7 @@ function Results(){
                     navigate('/staffMem/results/add-results')
                 }}>Add Results</button>
             </div>
-            <Table columns={columns}/>
+            <Table columns={columns} dataSource={results}/>
 
         </div>
     )

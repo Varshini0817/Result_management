@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PageTitle from "../../components/PageTitle";
 import StudentForm from "../../components/StudentForm";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../redux/alerts";
 import axios from "axios";
@@ -11,7 +11,6 @@ function EditStudent(){
     const [ student, setStudent ] = React.useState(null);
     const params = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const getStudent = async(values)=>{
         try {
             dispatch(ShowLoading());
@@ -43,7 +42,7 @@ function EditStudent(){
     return(
         <diV>
             <PageTitle title="Edit Student"/>
-            {student && <StudentForm student={student} type="edit"/>}
+            {student && <StudentForm student={student} type="edit" imgSrc="https://img.icons8.com/?size=100&id=svaFdGaOLJOl&format=png&color=000000"/>}
         </diV>
     )
 }

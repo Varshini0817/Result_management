@@ -62,21 +62,21 @@ function ResultForm(){
                             <Space key={key} style={{ display: 'flex', marginBottom: 8 }} align="baseline">
                             <Form.Item
                                 {...restField}
-                                name={[name, 'Subject name']}
+                                name={[name, 'name']}
                                 rules={[{ required: true, message: '*' }]}
                             >
                                 <input placeholder="Subject Name" />
                             </Form.Item>
                             <Form.Item
                                 {...restField}
-                                name={[name, 'Total marks']}
+                                name={[name, 'totalMarks']}
                                 rules={[{ required: true, message: '*' }]}
                             >
                                 <input placeholder="Total marks" />
                             </Form.Item>
                             <Form.Item
                                 {...restField}
-                                name={[name, 'Pass marks']}
+                                name={[name, 'passMarks']}
                                 rules={[{ required: true, message: '*' }]}
                             >
                                 <input placeholder="Pass marks" />

@@ -15,7 +15,8 @@ import EditStudent from './pages/staff/EditStudent';
 import PublicRoute from './components/PublicRoute';
 import Results from './pages/staff/Results';
 import AddResults from './pages/staff/AddResults';
-import EditResults from './pages/staff/EditResult';
+import EditResult from './pages/staff/EditResult';
+import ResultCheck from './pages/ResultCheck';
 
 function App() {
   const { loading } = useSelector((state) => state.alert);
@@ -27,6 +28,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/result/:resultId' element={<ResultCheck/>}/>
           <Route path = "/login" element={<PublicRoute><Login/></PublicRoute>}/>
           <Route path='/register' element={<PublicRoute><Register/></PublicRoute>} />
           <Route path='/staffMem' element={ 
@@ -62,7 +64,7 @@ function App() {
           }/>
           <Route path='/staffMem/results/edit/:resultId' element={
             <ProtectedRoute>
-              <EditResults/>
+              <EditResult />
             </ProtectedRoute>
           }
           />

@@ -5,12 +5,14 @@ import { useNavigate } from "react-router-dom";
 function DefaultLayout(props){
     const navigate = useNavigate();
     const {staffMem}  = useSelector(state=> state.staffMem)
-    console.log(staffMem);
+    //console.log(staffMem);
 
     return (
         <div className="layout">
             <div className="header d-flex justify-content-between align-items-center">
-                <h3 className="primary-text"><b className="secondary-text">RESULTS</b> PORTAL</h3>
+                <h3 className="primary-text cursor-pointer" onClick={()=>{
+                    navigate('/');
+                }}><b className="secondary-text">RESULTS</b> PORTAL</h3>
                 <div>
                     <h3 className="text-black text-medium">{staffMem?.name}</h3>
                     <h3 className="text-black text-small cursor-pointer" onClick={()=>{

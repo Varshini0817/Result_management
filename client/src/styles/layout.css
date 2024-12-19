@@ -18,23 +18,40 @@
 
 /* Default layout */
 .layout{
-    padding: 15px;
+    padding: 2px;
 }
-.header{
+.header {
     background: var(--primary);
-    padding: 10px 10px 0px 10px;
-    border-radius: 5px;
+    position: fixed; /* Fixes the header to the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures the header spans the entire width */
+    padding: 8px 8px 0px 8px;
+    z-index: 1000; /* Ensures the header is on top of other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better separation */
 }
-.content{
-    margin-top: 10px;
+
+.content {
+    margin-top: 70px; /* Pushes the content below the header (adjust to match header height) */
     padding: 10px;
-    box-shadow:0 0 2px rgba(0, 0, 0, 0.673);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.673);
     border: 1px solid gray;
     border-radius: 5px;
-    height: 85vh;
-    overflow-y: scroll;
+    height: calc(100vh - 80px); /* Adjust height to avoid overflow */
+    overflow-y: auto; /* Enables scrolling if content exceeds the available space */
 }
 
 .top{
     top:5px;
+}
+
+/* Class for results container */
+.res {
+    margin-top: 150px; /* Adds spacing to account for the fixed header height */
+    padding: 10px; 
+}
+
+/* Adjust the layout for the empty results message */
+.h-85 {
+    height: calc(100vh - 80px); /* Dynamically adjusts the height based on header height */
 }
