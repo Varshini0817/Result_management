@@ -13,6 +13,7 @@ router.post("/add-student", authMiddleware, async(req,res)=>{
         });
         const studentExists = await Student.findOne({
             rollNum : trimmedData.rollNum,
+            class: trimmedData.class
         })
         if(studentExists){
             return res.status(200).send({

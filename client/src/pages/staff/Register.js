@@ -29,7 +29,7 @@ function Register() {
     return (
         <div className=" h-screen d-flex flex-column">
             <Header/>
-            <div className="flex-grow-1 primary d-flex align-items-center justify-content-center">
+            <div className="flex-grow-1 bg d-flex align-items-center justify-content-center">
                 <div className="box-shadow">
                 <Form layout="vertical w-400 white p-4" onFinish={onFinish}>
                     <h1 className="text-medium ">Staff - Registration</h1>
@@ -47,7 +47,7 @@ function Register() {
                     <Form.Item name="confirmPassword" label="Confirm Password">
                         <Input type="password" />
                     </Form.Item>
-                    <button className="primary px-5 my-2 w-100">REGISTER</button>
+                    <button className="primary px-5 my-2 w-100 text-white">REGISTER</button>
                     <Link to='/login' className="m-5">Already Registered, Click Here To Login !</Link>
                 </Form>
             </div>

@@ -16,20 +16,20 @@ router.post("/register", async (req, res) => {
                 success: false
             })
         }
-        console.log(`Pwd: ${req.body.password} ${req.body.confirmPassword}`)
+        
         if (req.body.password != req.body.confirmPassword) {
-            console.log(`${req.body.password} ${req.body.confirmPassword}`)
+            //console.log(`${req.body.password} ${req.body.confirmPassword}`)
             return res.status(200).send({
                 message: "Passwords didn't match!",
                 success: false
             })
         }
 
-        const salt = await brcypt.genSalt(10);
-        const hashedPassword = await brcypt.hash(req.body.password, salt);
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
         req.body.password = hashedPassword;
 
-
+        console.log(`HP: ${req.body.password} ${hashedPassword}`)
         const newStaffMember = new Staff(req.body);
         await newStaffMember.save();
         res.status(200).send({

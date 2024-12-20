@@ -1,15 +1,15 @@
 :root{
-    --primary :  rgba(79, 246, 241, 0.663);
-    --secondary : #e89c31;
+    --primary :  rgba(19, 40, 68, 0.948);
+    --secondary : #ff9500;
 }
 
 *{
-    color: rgba(0, 0, 0, 0.8);
+font-weight: 500;
+
 }
 /* background colors */
 .primary{
     background: var(--primary);
-    height: 100vh;
 }
 
 .secondary{
@@ -18,7 +18,10 @@
 .white{
     background-color: white;
 }
-
+.bg{
+    background-color: #0093E9;
+    background-image: linear-gradient(315deg, #0093E9 0%, #80D0C7 100%);    
+}
 /* text-colors */
 .primary-text {
    color: rgb(239, 29, 221);
@@ -52,6 +55,9 @@
 }
 .text-black{
     color: black;
+}
+.text-underlined{
+    text-decoration: underline;
 }
 
 /* heights and widths */
@@ -91,7 +97,7 @@
 
 /* html elements */
 input {
-    border: 2px solid black; 
+    border: 1px solid black; 
     padding: 8px;
     color: #000;
     width: 100%;
@@ -105,8 +111,8 @@ select {
     padding-left: 20px;
 }
 input:focus {
-    background: var(--primary);
-    border: 2px solid rgb(248, 148, 148); 
+    background:rgb(209, 235, 237);
+    border: 1px solid rgb(248, 148, 148); 
     outline: none; 
 }
 button{
@@ -162,3 +168,4 @@ i{
 .box-shadow:hover {
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4); 
 }
+

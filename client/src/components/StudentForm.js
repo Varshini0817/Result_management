@@ -89,7 +89,7 @@ function StudentForm({ student, type, imgSrc }) {
                     </Col>
                 </Row>
                 <div className="d-flex justify-content-center mt-4">
-                    <button className="primary px-3 ">Save details</button>
+                    <button className="primary text-white px-3 ">Save details</button>
                 </div>
             </Form>
         </div>

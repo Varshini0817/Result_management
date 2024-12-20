@@ -166,7 +166,7 @@ function EditResult() {
                 <hr />
                 {!selectedStudent ? (
                     <div className="d-flex justify-content-center align-items-center">
-                        <button className="primary mx-4" onClick={() => {
+                        <button className="primary mx-4 text-white" onClick={() => {
                         setShowStudentsModal(true);
                     }}>Add Student Results</button>
                     </div>

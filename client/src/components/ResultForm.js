@@ -95,7 +95,7 @@ function ResultForm(){
                     )}
                 </Form.List>
                 <div className="d-flex justify-content-center mt-4">
-                    <button className="primary px-3 ">Save</button>
+                    <button className="primary text-white px-3 ">Save</button>
                 </div>
             </Form>
         </div>

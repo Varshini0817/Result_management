@@ -32,7 +32,7 @@ function Login() {
     return (
         <div className="h-screen d-flex flex-column">
             <Header />
-            <div className="flex-grow-1 primary d-flex m-0 p-0 align-items-center justify-content-center ">
+            <div className="flex-grow-1 bg d-flex m-0 p-0 align-items-center justify-content-center ">
                 <div className="box-shadow">
                     <Form layout="vertical w-400 white p-4" onFinish={onFinish} >
                         <h1 className="text-medium ">Staff - LOGIN</h1>
@@ -43,7 +43,7 @@ function Login() {
                         <Form.Item name="password" label="Password">
                             <Input type='password' />
                         </Form.Item>
-                        <button className="primary px-5 my-2 w-100">Login</button>
+                        <button className="primary text-white px-5 my-2 w-100">Login</button>
                         <Link to='/register' className="text-center d-block">Not Yet Registered, Click Here To Register !</Link>
                     </Form>
                 </div>

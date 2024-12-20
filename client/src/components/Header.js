@@ -6,17 +6,17 @@ function Header({ type }) {
     return (
         <div className="layout">
             <div className="header d-flex justify-content-between align-items-center">
-                <h3 className="primary-text"><b className="secondary-text">RESULTS</b> PORTAL</h3>
+                <h3 className="secondary-text mx-3">RESULTS PORTAL</h3>
                 {type === "home" ? (
                     <div className="d-flex justify-content-end align-items-center gap-3">
                         <h3
-                            className="text-black text-small cursor-pointer"
+                            className="text-white text-small cursor-pointer"
                             onClick={() => navigate("/register")}
                         >
                             Sign up
                         </h3>
                         <h3
-                            className="text-black text-small cursor-pointer"
+                            className="text-white text-small cursor-pointer"
                             onClick={() => navigate("/login")}
                         >
                             Login
@@ -25,7 +25,7 @@ function Header({ type }) {
                 ) : 
                 <div className="d-flex justify-content-end align-items-center gap-3">
                     <h3
-                            className="text-black text-small cursor-pointer"
+                            className="text-white mx-3 text-small cursor-pointer"
                             onClick={() => navigate("/")}
                         >
                             Home

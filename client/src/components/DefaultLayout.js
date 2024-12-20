@@ -10,16 +10,16 @@ function DefaultLayout(props){
     return (
         <div className="layout">
             <div className="header d-flex justify-content-between align-items-center">
-                <h3 className="primary-text cursor-pointer" onClick={()=>{
+                <h3 className="secondary-text cursor-pointer mx-3" onClick={()=>{
                     navigate('/');
-                }}><b className="secondary-text">RESULTS</b> PORTAL</h3>
-                <div>
-                    <h3 className="text-black text-medium">{staffMem?.name}</h3>
-                    <h3 className="text-black text-small cursor-pointer" onClick={()=>{
+                }}>RESULTS PORTAL</h3>
+                <div className="d-flex justify-content-center align-items-center gap-3">
+                    <h3 className="text-white text-medium">{staffMem?.name}</h3>
+                    <h3 className="text-white text-small cursor-pointer" onClick={()=>{
                         localStorage.removeItem("token");
                         toast.success("Log out successful !");
                         navigate("/login");
-                    }}>Logout</h3>
+                    }}><i class="ri-logout-box-r-line" style={{color:"white"}}></i></h3>
                 </div>
             </div>
             <div className="content">

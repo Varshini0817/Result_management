@@ -177,7 +177,7 @@ function Students() {
                         getStudents() 
                     }}></i>
                 </div>
-                <button className="primary mt-3 mt-md-0" onClick={() => {
+                <button className="primary text-white mt-3 mt-md-0" onClick={() => {
                     navigate("/staffMem/students/add-student")
                 }}>Add Student</button>
             </div>
