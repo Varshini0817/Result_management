@@ -48,7 +48,7 @@ function Register() {
                         <Input type="password" />
                     </Form.Item>
                     <button className="primary px-5 my-2 w-100 text-white">REGISTER</button>
-                    <Link to='/login' className="m-5">Already Registered, Click Here To Login !</Link>
+                    <Link to='/login' className="m-4">Already Registered, Click Here To Login !</Link>
                 </Form>
             </div>
                 </div>

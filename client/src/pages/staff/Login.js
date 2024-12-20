@@ -44,7 +44,7 @@ function Login() {
                             <Input type='password' />
                         </Form.Item>
                         <button className="primary text-white px-5 my-2 w-100">Login</button>
-                        <Link to='/register' className="text-center d-block">Not Yet Registered, Click Here To Register !</Link>
+                        <Link to='/register' className="text-small text-center d-block">Not Yet Registered, Click Here To Register !</Link>
                     </Form>
                 </div>
             </div>
